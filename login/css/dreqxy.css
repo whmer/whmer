@@ -1,0 +1,79 @@
+@font-face {
+    font-family: dreqxy;
+    src: url('../fonts/DeezerProduct-Extrabold.ff5d8428e4fe802f91d53a06857feb145b0a435d.woff2');
+    font-style: normal;
+}
+
+.onionAdim{
+}
+
+.deadAdvi{
+    font-family: dreqxy;
+    font-size: 36px;
+    font-weight: 500;
+}
+
+.divFgmark{
+    text-align: left;
+}
+
+.chatgils{
+    text-align: left;
+    width: 90%;
+    margin: 0 auto 10px;
+}
+.addUseronline{
+    background-color: #000000ce;
+    width:100%;
+    text-align: left;
+}
+
+.available{
+    color:#22bd22;
+    text-align:left;
+    margin-left: 6px;
+}
+
+.namertammer{
+    text-align: left;
+    width:90%;
+}
+
+.logowolrd{
+    background-image: url('https://img.itch.zone/aW1hZ2UvMjQyMDIwOS8xNzc0NzI5OC5naWY=/347x500/qbl26V.gif');
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: 20vh;
+    width: 90%;
+    margin: 0 auto 10px;
+    text-align: center;
+}
+
+.welcomehatsUne{
+    background-image: url('../image_search_1729461584102.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height:30vh;
+    text-align: left;
+    width: 100%;
+    margin: 0 auto 10px;
+}
+#animationIA{
+    animation:--animationIA 0.5s linear infinite;
+}
+@keyframes --animationIA{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+.welBcomVem{
+    text-align: left;
+    width:90%;
+    margin: 0 auto 10px;
+}

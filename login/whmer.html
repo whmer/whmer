@@ -10,11 +10,12 @@
     <meta property="og:type" content="website" />
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/hanime.css">
+    <link rel="stylesheet" href="css/dreqxy.css"/>
     <link rel="shortcut icon" href="./whmer-logo.png" type="image/x-icon">
-    <title>Whmer Hentai</title>
+    <title>iana Hentai</title>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-<script src="https://www.google.com/recaptcha/enterprise.js?render=6LdiuycqAAAAAI_ZGJQiyMwX-LRAS5fhZfWxce_C"></script>
+<script src="   "></script>
 
 <body>
     <div class="container">
@@ -43,7 +44,7 @@
         </div><br><br><br>
             <script>
                 const divty = document.querySelector('.hanime');
-                const name_gree = 'Whmer Games';
+                const name_gree = 'Whmer iana';
                 divty.innerHTML += `<span class="name-link">Welcome to<span class="name-link" style="color:orange"> ${name_gree}</span>. </span>`;
                 divty.innerHTML += `<span class="name-link"> Invite friends to play! Official website <img src="https://telegra.ph/file/01a2cadbb6090dead1234.gif" width="20" title="hentai"/> <span style="color:green; font-weight:600;">https://whmer.onrender.com/</span> </span>`;
                 divty.innerHTML += '<span class="name-link">🎁 Come in and play free porn games.</span>';
@@ -158,98 +159,194 @@
 }
 
             </style>
-            <script>
+            <script >
                 let currentIndex = 0;
-                const slides = document.querySelector('.slides');
-                const totalSlides = document.querySelectorAll('.slide').length;
-                let autoSlideInterval;
-                let startX, isDragging = false;
-        
-                document.querySelector('.next').addEventListener('click', () => {
+            const slides = document.querySelector('.slides');
+            const totalSlides = document.querySelectorAll('.slide').length;
+            let autoSlideInterval;
+            let startX, isDragging = false;
+    
+            document.querySelector('.next').addEventListener('click', () => {
+                clearInterval(autoSlideInterval);
+                nextSlide();
+                autoSlideInterval = setInterval(nextSlide, 3000);
+            });
+    
+            document.querySelector('.prev').addEventListener('click', () => {
+                clearInterval(autoSlideInterval);
+                prevSlide();
+                autoSlideInterval = setInterval(nextSlide, 3000);
+            });
+    
+            slides.addEventListener('touchstart', handleTouchStart, false);
+            slides.addEventListener('touchmove', handleTouchMove, false);
+            slides.addEventListener('mousedown', handleMouseDown, false);
+            slides.addEventListener('mousemove', handleMouseMove, false);
+            slides.addEventListener('mouseup', handleMouseUp, false);
+            slides.addEventListener('mouseleave', handleMouseUp, false);
+    
+            function handleTouchStart(event) {
+                startX = event.touches[0].clientX;
+            }
+    
+            function handleTouchMove(event) {
+                if (!startX) return;
+    
+                let moveX = event.touches[0].clientX;
+                let diffX = startX - moveX;
+    
+                if (Math.abs(diffX) > 50) {
                     clearInterval(autoSlideInterval);
-                    nextSlide();
+                    if (diffX > 0) {
+                        nextSlide();
+                    } else {
+                        prevSlide();
+                    }
                     autoSlideInterval = setInterval(nextSlide, 3000);
-                });
-        
-                document.querySelector('.prev').addEventListener('click', () => {
+                    startX = null;
+                }
+            }
+    
+            function handleMouseDown(event) {
+                startX = event.clientX;
+                isDragging = true;
+            }
+    
+            function handleMouseMove(event) {
+                if (!isDragging) return;
+    
+                let moveX = event.clientX;
+                let diffX = startX - moveX;
+    
+                if (Math.abs(diffX) > 50) {
                     clearInterval(autoSlideInterval);
-                    prevSlide();
+                    if (diffX > 0) {
+                        nextSlide();
+                    } else {
+                        prevSlide();
+                    }
                     autoSlideInterval = setInterval(nextSlide, 3000);
-                });
-        
-                slides.addEventListener('touchstart', handleTouchStart, false);
-                slides.addEventListener('touchmove', handleTouchMove, false);
-                slides.addEventListener('mousedown', handleMouseDown, false);
-                slides.addEventListener('mousemove', handleMouseMove, false);
-                slides.addEventListener('mouseup', handleMouseUp, false);
-                slides.addEventListener('mouseleave', handleMouseUp, false);
-        
-                function handleTouchStart(event) {
-                    startX = event.touches[0].clientX;
-                }
-        
-                function handleTouchMove(event) {
-                    if (!startX) return;
-        
-                    let moveX = event.touches[0].clientX;
-                    let diffX = startX - moveX;
-        
-                    if (Math.abs(diffX) > 50) {
-                        clearInterval(autoSlideInterval);
-                        if (diffX > 0) {
-                            nextSlide();
-                        } else {
-                            prevSlide();
-                        }
-                        autoSlideInterval = setInterval(nextSlide, 3000);
-                        startX = null;
-                    }
-                }
-        
-                function handleMouseDown(event) {
-                    startX = event.clientX;
-                    isDragging = true;
-                }
-        
-                function handleMouseMove(event) {
-                    if (!isDragging) return;
-        
-                    let moveX = event.clientX;
-                    let diffX = startX - moveX;
-        
-                    if (Math.abs(diffX) > 50) {
-                        clearInterval(autoSlideInterval);
-                        if (diffX > 0) {
-                            nextSlide();
-                        } else {
-                            prevSlide();
-                        }
-                        autoSlideInterval = setInterval(nextSlide, 3000);
-                        isDragging = false;
-                    }
-                }
-        
-                function handleMouseUp(event) {
                     isDragging = false;
                 }
-        
-                function nextSlide() {
-                    currentIndex = (currentIndex + 1) % totalSlides;
-                    updateSlider();
-                }
-        
-                function prevSlide() {
-                    currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
-                    updateSlider();
-                }
-        
-                function updateSlider() {
-                    slides.style.transform = `translateX(-${currentIndex * 100}%)`;
-                }
-        
-                autoSlideInterval = setInterval(nextSlide, 3000);
+            }
+
+            function handleMouseUp(event) {
+                isDragging = false;
+            }
+    
+            function nextSlide() {
+                currentIndex = (currentIndex + 1) % totalSlides;
+                updateSlider();
+            }
+    
+            function prevSlide() {
+                currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+                updateSlider();
+            }
+    
+            function updateSlider() {
+                slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+            }
+    
+            autoSlideInterval = setInterval(nextSlide, 3000);
             </script>
             <!---->
+            <br><br>
+            <div class="welBcomVem">
+                <h2 class="deadAdvi" style="font-size: 50px;">WELCOME! <img src="./STK-20241020-WA0003.webp" style="position: absolute; margin-top:-14px;" width="60"/></h2>
+                <span style="color:#717171;font-size: 13px;margin: 5px;">[!] Update coming soon<i id="animationIA">...</i></span>
+                <p style="font-size: 15px;">I'm <a style="color: #9d36da;">whmer iana</a>. Connect to watch leaked videos on the internet, playing hentai games is much more.Share with your friends and relatives. Soon whmer iana will have a messaging feature so that all users can communicate.</p>
+            </div>
+            <div class="welcomehatsUne">
+ <br>
+                <p style="font-size: 13px;">YOUR IP :<i id="myIpusercom" style="font-size: 13px; color:#9d36da; margin-left:5px;"> </i></p>
+                <p style="font-size: 13px;">YOUR CITY :<i id="myCityusercom" style="font-size: 13px; color:#9d36da; margin-left: 5px;"> </i></p>
+                <p style="font-size: 13px;">DIVICE:<i id="SisView" style="font-size: 13px; color:#9d36da; margin-left: 5px;"></i>
+                <p style="font-size: 13px;">USER.AGENT:<i id="userInformy" style="font-size: 13px; color:#9d36da; margin-left: 5px;"></i>
+                </div>
+                <script>
+                    
+
+        async function getUserIP() {
+            try {
+                const response = await fetch('https://ipinfo.io/json');
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                const data = await response.json();
+                console.log(data);
+                document.getElementById('myIpusercom').innerText = data.ip;
+                document.getElementById('myCityusercom').innerText = data.city;
+    
+            } catch (error) {
+                console.error('Error when searching for IP address:', error);
+            }
+        }
+    
+        getUserIP();
+    </script>
+       <script>
+function verificarDispositivo() {
+            var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+            var sistema = "";
+
+
+            if (/android/i.test(userAgent)) {
+                sistema = "Android";
+                realizarAcaoAndroid(userAgent);  
+            }
+
+
+            else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+                sistema = "iOS";
+                realizarAcaoiOS(userAgent);  
+            }
+
+
+            else if (/windows/i.test(userAgent)) {
+                sistema = "Windows";
+                realizarAcaoWindows(userAgent);  
+            }
+
+
+            else {
+                sistema = "Outro dispositivo";
+            }
+
+
+            document.getElementById("SisView").textContent = sistema;
+            document.getElementById("userInformy").textContent = userAgent;
+        }
+
+
+        function realizarAcaoAndroid(userAgent) {
+            console.log("Ação para Android: ", userAgent);
+
+        }
+
+
+        function realizarAcaoiOS(userAgent) {
+            console.log("Ação para iOS: ", userAgent);
+  
+        }
+
+
+        function realizarAcaoWindows(userAgent) {
+            console.log("Ação para Windows: ", userAgent);
+  
+        }
+
+        window.onload = function() {
+            verificarDispositivo();
+        };
+    </script>
+            </div>
+            <div class="usertAnuPatro">
+                <img src="./STK-20241020-WA0012.webp" style="margin:10px;" width="50"/>
+                <img src="./STK-20241020-WA0013.webp" style="margin:10px;" width="50"/>
+                <img src="./image_search_1729462339575.png" style="margin:10px;" width="80"/>
+            </div>
+            <br><br>
         <div class="divbotouns">
             <div class="viewtsdf">
             <button id="vidfgfgf">Videos</button>
@@ -303,135 +400,7 @@
                     });
                         </script>
             </div>
-            <div class="divulinkmay" id="divulinkmaychatclik">
-                <script>
-                    document.getElementById('divulinkmaychatclik').addEventListener('click', function(){
-                        window.location.href = 'https://s.magsrv.com/click.php?d=H4sIAAAAAAAAA2WTXW_bOgyG_4pvchlDpL4vNxwMWbKl3WniZrmjP9Lm1LYcxW7nQD9.ctLtDJhpGNRjii9BSkowEICBpchEeO777jzjH2b4Kb551bg8LY_nzrXH16pOC9dE_OTix5Y55ySrOVlt5oKAz6015VwREAjGdUU0458Kd.5n_B.WsumJEjNUPT1F5LpyvSkX.3yxzveL9fqb_tbknV52_ku.220Q.G6XDXWhiDLG7KXj23Goy5XKYF1.hbrv89OKcqLVYrvFB5Zt7.ryq8qY73YPQzMFsstJ6RWt9id_NukX.qz96qSXainVcn.SUvs9f8w3RArpsh0vlEk1Msj2gA9mtzEbzB5jBd.fQT8dFf.Q3w_323vd.U5mmwcch6vIVa8uNyvVVCOOI0Til4ryZSf3_O7PmHd3c9exmnsAL7r2dILOIV6a.tz6_tQ1bcddscDYqIKa7ljGXqnbkCJ6JX8lFo2y1qqIzm7wRRVZ74exaufPVdvT8TYrdT721S2FYRam8ItrbwQ1gDbmqtNfCQCbVm5oez_G9cd_40FQB.cbmoYY_ZdqfHN.ig2BBdAohAZkGP7SDiBsqk0KRqcAPPwqOLzLhigWAqANGAQLkwWYzCL7AcywoJQWXIC0RAfDU6ul0sgROQOFaE3cp8SUSgVdQl4UuogHD3JFBRNSktLsYPGAWkaxmP7vEm.yyXCm5EaTgnzvXJu05IfeJe3Q08uQUHtsquTt7S255fgd7Zokrsp4TdrkXNNY.aRzPhJ6OSb_UdNUfvyRhKv8ZFwIIzi_eppxycPURmTh_f9kIkbHhgjURmsTgQw8ohBQBMTo49SqEGfzx6b_DX97N9FXkOFuFeyhVPKQl7nhRMJKLuWB5xUjsAVKfvgJqKSmOgcEAAA-';
-                    })
-                </script>
-                <style>
-                    .divulinkmay{
-                        display: flex;
-                        width: 100%;
-                        /*background-image: url('https://telegra.ph/file/6326fdd179333297fd212.png');*/
-                        background: #fff;
-                        background-size: auto;
-                        background-position: center left;
-                        background-repeat: no-repeat;
-                        margin: 0;
-                        overflow: hidden;
-                        padding-bottom: none;
-                        color: #000;
-                        cursor: pointer;
-
-                    }
-                    .steam{
-                        cursor:pointer;
-                    }
-                    .divulinkmaymec{
-                        margin: 0;
-                        display: flex;
-                        width: 100%;
-                    }
-                    .apicity{
-                        margin-top: 5px;
-                        text-align: left;
-                        margin-left: 20px;
-                        width: 100%;
-                    }
-                    .divbackhj{
-                        background: #000000ec;
-                        width: 100%;
-                    }
-                    .chatyu{
-                        background-color: #ffffff;
-                        padding: 2px;
-                        margin-top: -7px;
-                        position: relative;
-                        justify-content: left;
-                        text-align: left;
-                        display: flex;
-                        color: red;
-                        width: 100%;
-                        overflow: hidden;
-                    }
-
-                    .divanimationhel{
-                        margin-top: 2px;
-                        margin-left: -20px;
-                        position: relative;
-                        left: -40px;
-                        animation: reverse --divanimationhel 2s linear infinite;
-                        color: #000;
-                    }
-                    @keyframes --divanimationhel{
-                        0%{
-                            left: -40px;
-                        }
-                        50%{
-                            left: 1px;
-                        }
-                        90%{
-                            left: -30px;
-                        }
-                    }
-                    .pixchat{
-                        animation: --pixchat 0.5s linear infinite;
-                    }
-                    .liverchat{margin-left:5px; width: 100%;}
-                    .livechatimage{margin-top:1px;}
-                    @keyframes --pixchat{
-                        from{
-                            opacity: 0;
-                        }
-                        to{
-                            opacity: 1;
-
-                        }
-                    }
-                </style>
-                <div class="divulinkmaymec">
-                    <div class="whatsapgyphy">
-                        <img src="https://static-ca-cdn.eporner.com/gallery/6w/aS/w8gHeTpaS6w/15571139-cezgif-1-9b8f9b7df3_296x1000.gif" width="90" height="90" id="whatclickhell"/>
-                    </div>
-                    <script>
-                            const gyphi = [ 'https://static-ca-cdn.eporner.com/gallery/q6/8G/iVR0dzz8Gq6/4014601-ginger-dp-481675f.gif','https://static-ca-cdn.eporner.com/gallery/UA/Xz/cuamvYxXzUA/9875221-manijaksrb1988-gifs-fallery-36897715fd8e8b5c95ea_296x1000.gif','https://static-ca-cdn.eporner.com/gallery/tw/tc/3bKN1Fbtctw/1290275-7-20094665_296x1000.gif', 'https://static-ca-cdn.eporner.com/gallery/6w/aS/w8gHeTpaS6w/15571139-cezgif-1-9b8f9b7df3_296x1000.gif' ]
-                            let indice = 0;
-                            function truety(){
-                            const whatclickhell = document.getElementById('whatclickhell');
-                            indice = (indice + 1) % gyphi.length; 
-                            whatclickhell.src = gyphi[indice];
-                    }
-
-                        setInterval(truety, 3000);
-                    </script>
-                    <!--img src="https://telegra.ph/file/bf70695454b748e4756eb.jpg" hidden id="thefilesmari" width="60" height="100vh"  style=""/-->
-                <div class="divbackhj">
-                <div class="apicity">
-            <span id="heypretty" style="color: #fff; font-size: 18px; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-weight:500;"></span><br>
-            <span style="color: #fff;font-size: 18px; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-weight:500;" id="another-span"></span><br>
-                <span>
-                    <img src="https://em-content.zobj.net/source/animated-noto-color-emoji/356/smiling-face-with-horns_1f608.gif" width="20"/>
-                    <img src="https://em-content.zobj.net/source/animated-noto-color-emoji/356/smiling-face-with-horns_1f608.gif" width="20"/>
-                    <img src="https://em-content.zobj.net/source/animated-noto-color-emoji/356/smiling-face-with-horns_1f608.gif" width="20"/>
-                    <img src="https://em-content.zobj.net/source/animated-noto-color-emoji/356/smiling-face-with-horns_1f608.gif" width="20"/>
-
-                </span><br>
-                </div>
-                </div>
-            </div>
-            </div>
-            <div class="chatyu">
-                <div class="livechatimage">
-                <img src="https://telegra.ph/file/abb34f328fd5453127ad6.gif" width="22"/>
-                </div>
-                <div class="liverchat">
-                    <span style="font-weight: 600;">CLICK TO FIND OUT MORE</span>
-                </div>
-                <div class="divanimationhel">
-                    <span style=" background-color: #26ac5e; padding: 5px 20px; font-size: 14px; border-radius: 5px; width: 100%; font-weight: 700;">message</span>
-                </div>
-            </div>
+            
             <!---->
     <div class="top-painel">
         <div class="home-view">
@@ -486,8 +455,11 @@ window.addEventListener('scroll', function() {
             }
         });
 </script>
+<div class="divstickerhentai">
+    <img src="./STK-20241014-WA0049.webp" width="50"/>
+</div>
         <div class="name-game-hanime" style="margin-left: 10px; text-align: left; margin-top: 16px; width: 100%;" >
-            <h2 style="font-size: 20px; margin-left: 20px; color: #fff;">Whmer Games<br><p style="color: #ffffff5b; font-size: 12px;">Hentai Gozoanimes</p></h2>
+            <h2 style="font-size: 20px; margin-left: 20px; color: #fff;">Whmer iana<br><p style="color: #ffffff5b; font-size: 12px;">Hentai Gozoanimes</p></h2>
         </div>
         <div class="depo">
             <div class="depos-fg">
@@ -1021,11 +993,102 @@ window.addEventListener('scroll', function() {
                     <img src="https://telegra.ph/file/f27810e6c70051cfc7656.jpg" width="80" style="border-radius: 5px;"/>
                 </div>
                 <div class="vasdfdsf">
-                    <h2 style="font-weight: 800;">WELCOME!<br><p style="font-size: 12px;">Congratulations! You were able to access the website <p style="font-size: 12px; margin-top:10px; color: #2b2a2a;">それを最大限に活用する</p></p></h2>
+                    <h2 style="font-weight: 800; color: #9d36da;">Hello user!<br><p style="font-size: 12px;">Congratulations! You were able to access the website <p style="font-size: 14px; margin-top:10px; color: #2b2a2a;">それを最大限に活用する <img src="./STK-20241020-WA0002.webp" width="40" style="position: absolute; margin-top: -8px; margin-left: 10px;"/></p></p></h2>
                 </div>
             </div>
-            <br>
-            <br>
+            <br><br>
+            <div class="namertammer" style="margin-left: 25px ;">
+                <h3 class="deadAdvi">World Tamer</h3>
+                <p>Fresh out of college, you decide to return to your birth town - the place you once fled. Now you’re back to uncover what your parents did to you and what secrets lie around. Explore the town, uncover its past, and meet countless personalities, each with their own unique story.</p>    
+            </div><br>
+    <div class="logowolrd">
+    </div>
+    <br>
+    <button style="width: 90%; border-radius: 10px; padding: 5px; font-size: 20px; background-color: transparent; color: #717171; border: 1px solid #717171;" >play now</button>
+    <br><br>
+            
+            <div class="divlassUsergils">
+                <div class="chatgils">
+                    <h2 class="deadAdvi">Chat with Girls</h2>
+                    <p style="color: #717171;">Start chatting with pretty girls, they are willing to do anything to make you happy.</p>
+                </div>
+            </div>
+
+            <div class="muuuwelcomer">
+            <div class="divfaceusers">
+                <div class="divuser1">
+                    <div class="buttondivuser">
+                        <div class="divuserimage">
+                            <div class="addUseronline">
+                                <h5 class="available">online</h5>
+                            </div>
+                        </div>
+                        <div class="branquinhaname">
+                            <span>Queen purple</span>
+                        </div>
+                        <div class="bouserpurple">
+                            <span>Send Message</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="divuser1 talink" id="thekymsamface">
+                    <div class="buttondivuser">
+                        <div class="divuserimage2">
+                            <div class="addUseronline">
+                                <h5 class="available">online</h5>
+                            </div>
+                        </div>
+                        <div class="branquinhaname">
+                            <span>Kym sam</span>
+                        </div>
+                        <div class="bouserpurple">
+                            <span>Send Message</span>
+                        </div>
+                    </div>
+                    <script>
+                        document.querySelector('.talink').addEventListener('click', function(){
+                            window.location.href = 'https://www.facebook.com/profile.php?id=61559922673077&mibextid=ZbWKwL'
+                        })
+                    </script>
+                </div>
+                <div class="divuser1" id="">
+                    <div class="buttondivuser">
+                        <div class="divuserimage1">
+                        </div>
+                        <div class="branquinhaname">
+                            <span>Hentai chat</span>
+                        </div>
+                        <div class="bouserpurple">
+                            <span>Send Message</span>
+                        </div>
+                    </div>
+                </div>
+                <script src="./script.js"></script>
+                <style>
+.muuuwelcomer {
+    width: 100%;
+    overflow: hidden; /* Esconde os itens fora da área visível */
+}
+
+.divfaceusers {
+    display: flex;
+    /* Remova a transição de `divfaceusers` */
+}
+
+.divuser1 {
+    min-width: 35vw; /* Cada div ocupa 50% da largura da tela */
+    box-sizing: border-box;
+    transition: transform 0.3s ease-in-out; /* Suaviza a transição de movimento */
+}
+
+
+
+                </style>
+            </div>
+        </div>
+        <br>
+        <button style="width: 90%; border-radius: 10px; padding: 5px; font-size: 20px; background-color: transparent; color: #717171; border: 1px solid #717171;" >sign in</button>
+            <br><br><br><br>
             <div class="div-videos-tick">
                 <div class="vidhentairt">
                     <style>
@@ -1033,8 +1096,9 @@ window.addEventListener('scroll', function() {
                             width:100%;
                             margin: 0 auto 10px;
                         }
-                        video{
+                        .video{
                             width: 100%;
+                            border-radius: 10px;
                             margin: 0;
                         }
                         .fsdfedfas{
@@ -1052,9 +1116,192 @@ window.addEventListener('scroll', function() {
                         width: 100%;
                         margin-left: 20px;
                     }
+                    .div-videos-tick{
+                        width: 90%;
+                        justify-content: center;
+                        margin: 0 auto 10px;
+                    }
+                    .divdreqxyuser{
+                        text-align: left;
+                        display: flex;
+                    }
+
+                    .nameUser{
+                        margin-left: 10px;
+                        margin-top: 1px;
+                        width: 100%;
+                    }
                     </style>
-                    <p>hentai videos, games and more.<br> Connect and see everything that happens inside</p><br>
-                    <video width="100%" height="90%" autoplay loop muted>
+                    <div class="divulinkmay" id="divulinkmaychatclik">
+                        <script>
+                            document.getElementById('divulinkmaychatclik').addEventListener('click', function(){
+                                window.location.href = 'https://s.magsrv.com/click.php?d=H4sIAAAAAAAAA2WTXW_bOgyG_4pvchlDpL4vNxwMWbKl3WniZrmjP9Lm1LYcxW7nQD9.ctLtDJhpGNRjii9BSkowEICBpchEeO777jzjH2b4Kb551bg8LY_nzrXH16pOC9dE_OTix5Y55ySrOVlt5oKAz6015VwREAjGdUU0458Kd.5n_B.WsumJEjNUPT1F5LpyvSkX.3yxzveL9fqb_tbknV52_ku.220Q.G6XDXWhiDLG7KXj23Goy5XKYF1.hbrv89OKcqLVYrvFB5Zt7.ryq8qY73YPQzMFsstJ6RWt9id_NukX.qz96qSXainVcn.SUvs9f8w3RArpsh0vlEk1Msj2gA9mtzEbzB5jBd.fQT8dFf.Q3w_323vd.U5mmwcch6vIVa8uNyvVVCOOI0Til4ryZSf3_O7PmHd3c9exmnsAL7r2dILOIV6a.tz6_tQ1bcddscDYqIKa7ljGXqnbkCJ6JX8lFo2y1qqIzm7wRRVZ74exaufPVdvT8TYrdT721S2FYRam8ItrbwQ1gDbmqtNfCQCbVm5oez_G9cd_40FQB.cbmoYY_ZdqfHN.ig2BBdAohAZkGP7SDiBsqk0KRqcAPPwqOLzLhigWAqANGAQLkwWYzCL7AcywoJQWXIC0RAfDU6ul0sgROQOFaE3cp8SUSgVdQl4UuogHD3JFBRNSktLsYPGAWkaxmP7vEm.yyXCm5EaTgnzvXJu05IfeJe3Q08uQUHtsquTt7S255fgd7Zokrsp4TdrkXNNY.aRzPhJ6OSb_UdNUfvyRhKv8ZFwIIzi_eppxycPURmTh_f9kIkbHhgjURmsTgQw8ohBQBMTo49SqEGfzx6b_DX97N9FXkOFuFeyhVPKQl7nhRMJKLuWB5xUjsAVKfvgJqKSmOgcEAAA-';
+                            })
+                        </script>
+                        <style>
+                            .divulinkmay{
+                                display: flex;
+                                width: 100%;
+                                /*background-image: url('https://telegra.ph/file/6326fdd179333297fd212.png');*/
+                                background: #fff;
+                                background-size: auto;
+                                background-position: center left;
+                                background-repeat: no-repeat;
+                                margin: 0;
+                                overflow: hidden;
+                                padding-bottom: none;
+                                color: #000;
+                                cursor: pointer;
+        
+                            }
+                            .steam{
+                                cursor:pointer;
+                            }
+                            .divulinkmaymec{
+                                margin: 0;
+                                display: flex;
+                                width: 100%;
+                            }
+                            .apicity{
+                                margin-top: 5px;
+                                text-align: left;
+                                margin-left: 20px;
+                                width: 100%;
+                            }
+                            .divbackhj{
+                                background: #f7f7f7;
+                                width: 100%;
+                                display: flex;
+                            }
+                            .chatyu{
+                                background-color: #ffffff;
+                                padding: 2px;
+                                margin-top: -7px;
+                                position: relative;
+                                justify-content: left;
+                                text-align: left;
+                                display: flex;
+                                color: red;
+                                width: 100%;
+                                overflow: hidden;
+                            }
+        
+                            .divanimationhel{
+                                margin-top: 2px;
+                                margin-left: -20px;
+                                position: relative;
+                                left: -40px;
+                                animation: reverse --divanimationhel 2s linear infinite;
+                                color: #000;
+                            }
+                            @keyframes --divanimationhel{
+                                0%{
+                                    left: -40px;
+                                }
+                                50%{
+                                    left: 1px;
+                                }
+                                90%{
+                                    left: -30px;
+                                }
+                            }
+                            .pixchat{
+                                animation: --pixchat 0.5s linear infinite;
+                            }
+                            .liverchat{margin-left:5px; width: 100%;}
+                            .livechatimage{margin-top:1px;}
+                            @keyframes --pixchat{
+                                from{
+                                    opacity: 0;
+                                }
+                                to{
+                                    opacity: 1;
+        
+                                }
+                            }
+                        </style>
+                        <div class="divulinkmaymec">
+                            <div class="whatsapgyphy">
+                                <img src="https://static-ca-cdn.eporner.com/gallery/6w/aS/w8gHeTpaS6w/15571139-cezgif-1-9b8f9b7df3_296x1000.gif" width="90" height="90" id="whatclickhell"/>
+                            </div>
+                            <script>
+                                    const gyphi = [ 'https://static-ca-cdn.eporner.com/gallery/q6/8G/iVR0dzz8Gq6/4014601-ginger-dp-481675f.gif','https://static-ca-cdn.eporner.com/gallery/UA/Xz/cuamvYxXzUA/9875221-manijaksrb1988-gifs-fallery-36897715fd8e8b5c95ea_296x1000.gif','https://static-ca-cdn.eporner.com/gallery/tw/tc/3bKN1Fbtctw/1290275-7-20094665_296x1000.gif', 'https://static-ca-cdn.eporner.com/gallery/6w/aS/w8gHeTpaS6w/15571139-cezgif-1-9b8f9b7df3_296x1000.gif' ]
+                                    let indice = 0;
+                                    function truety(){
+                                    const whatclickhell = document.getElementById('whatclickhell');
+                                    indice = (indice + 1) % gyphi.length; 
+                                    whatclickhell.src = gyphi[indice];
+                            }
+        
+                                setInterval(truety, 3000);
+                            </script>
+                            <!--img src="https://telegra.ph/file/bf70695454b748e4756eb.jpg" hidden id="thefilesmari" width="60" height="100vh"  style=""/-->
+                        <div class="divbackhj">
+                        <div class="apicity">
+                    <span id="heypretty" style="color: #000; font-size: 18px; font-family: sam; font-weight:600;"></span><br>
+                    <span style="color: #000;font-size: 18px; font-family:sam; font-weight:600;" id="another-span"></span><br>
+                        <span>
+                            <img src="https://em-content.zobj.net/source/animated-noto-color-emoji/356/smiling-face-with-horns_1f608.gif" width="20"/>
+                            <img src="https://em-content.zobj.net/source/animated-noto-color-emoji/356/smiling-face-with-horns_1f608.gif" width="20"/>
+                            <img src="https://em-content.zobj.net/source/animated-noto-color-emoji/356/smiling-face-with-horns_1f608.gif" width="20"/>
+                            <img src="https://em-content.zobj.net/source/animated-noto-color-emoji/356/smiling-face-with-horns_1f608.gif" width="20"/>
+        
+                        </span><br>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+            <div class="chatyu" id="chatyu">
+                <div class="livechatimage">
+                <img src="https://telegra.ph/file/abb34f328fd5453127ad6.gif" width="22"/>
+                </div>
+                <div class="liverchat">
+                    <span style="font-weight: 800; font-family: sam; color: #000;"> Click to find out more.</span>
+                </div>
+                <div class="divanimationhel">
+                    <span hidden="hidden" style=" background-color: #26ac5e; padding: 5px 20px; font-size: 14px; border-radius: 5px; width: 100%; font-weight: 700;">message</span>
+                </div>
+            </div>
+            <script>
+                document.querySelector('.remoki').addEventListener('click', function() {
+                   document.querySelector('.divulinkmaymec').style.display = "none";
+                   document.getElementById('chatyu').style.display = "none";
+                   document.querySelector('.butremoveranu').style.display = "none";
+                });
+            </script>
+                    <div class="lineAdmino"></div><br><br>
+                    <div class="divFgmark">
+                    <h2 class="deadAdvi">Whmer Iana
+                        <img src="./STK-20241019-WA0007.webp" width="80"/>
+                    </h2>
+                    <h2>Hentai videos, games and more.<br> Connect and see everything that happens inside</h2><br>
+                  <div class="flexUserchat">
+                    <div class="chatUser">
+                       <h3 class="quennUserchat">Chat</h3>
+                   </div>
+                   <div class="chatUser">
+                    <h3 class="quennUserchat">Videos</h3>
+                   </div>
+                   <div class="chatUser">
+                    <h3 class="quennUserchat">Games</h3>
+                   </div>
+                   <div class="chatUser">
+                    <h3 class="quennUserchat">Imagens</h3>
+                   </div>
+                    </div>
+                  </div>
+                    <br>
+                    <br><br>
+                    <div class="divdreqxyuser">
+                        <div class="divdreIma">
+                            <img src="./dreqxy.jpeg" width="45" style="border-radius: 100%;"/>
+                        </div>
+                        <div class="nameUser">
+                            <h3 style="color: #9d36da" class="onionAdim">dreqxy onion</h3>
+                            <p style="font-size: 12px;">Creator && Developer</p>
+                        </div>
+                    </div>
+                    <video width="100%" class="video" height="90%" autoplay loop muted>
                     <source src="https://telegra.ph/file/dcc148db0e7fd8b05a341.mp4" type="video/mp4">
                     Seu navegador não suporta a tag de vídeo.
                 </video>
@@ -1098,7 +1345,7 @@ window.addEventListener('scroll', function() {
                 <img src="https://telegra.ph/file/5bfd67b5d133efbdfa615.jpg" width="100%" height="210" id="erfdsfsdf"/>
             </div>
             <ion-icon name="logo-android"></ion-icon><br>
-            <a style="color: #ff0000; text-decoration: none; font-weight: 600; font-size: 14px;">Can't access the account?</a><br>
+            <a style="color: #9d36da; text-decoration: none; font-weight: 600; font-size: 14px;">Can't access the account?</a><br>
             <p class="pnamespan">Please contact support to be able to access the administrator account. Speak to support via Telegram or WhatsApp.</p>
             <br>
         </div>
@@ -1132,7 +1379,7 @@ window.addEventListener('scroll', function() {
                 }
             </style>
             <img src="https://telegra.ph/file/fdd38b193065559250049.png" width="120"/>
-            <p style="font-size: 13px; font-weight: 600; color: orange;"> Copyright &copy; Hentai Gozoanimes - Whmer Games 2024<br>abre.ai/whmer was recently created by WhmerSociety, a website featuring hentai games, videos and images. The website may undergo updates.<br><br>Created by: WhmerSociety</p>
+            <p style="font-size: 13px; font-weight: 600; color: #9d36da;"> Copyright &copy; Hentai Gozoanimes - Whmer iana 2024<br>abre.ai/whmer was recently created by WhmerSociety, a website featuring hentai games, videos and images. The website may undergo updates.<br><br>Created by: WhmerSociety</p>
             <br>
        <div class="ggflesmana">
             <div class="botyupoaf">

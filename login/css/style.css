@@ -597,5 +597,99 @@ transition: 0.5s;
     font-weight: 600;
 }
 
+.divstickerhentai{
+    position: relative;
+    left: 20px;
+    top: 10px;
+}
+.butremoveranu{
+    background-color: #151515;
+    color: #074ebf;
+    border-radius: 100px;
+    border: 2px solid #074ebf;
+    margin: 5px;
+    justify-content:right;
+    position: absolute;
+    right: 10px;
+    text-align: center;
+    width: 20px;
+}
+.divfaceusers{
+    background-color: #252525c2;
+    overflow: hidden;
+    z-index: 6;
+}
+
+
+.divuserimage{
+    background-image: url('../dre.jpeg');
+    height: 20vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    width: 100%;
+}
+.divuserimage1{
+    background-image: url('../both-holes-filled.jfif');
+    height: 20vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    width: 100%;
+}
+.divuserimage2{
+    background-image: url('../joinkym.jpeg');
+    height: 20vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    overflow: hidden;
+    width: 100%;
+}
+
+.divuser1{
+    background: #151515;
+    border: 1px solid #6e6e6e74;
+    border-radius: 5px;
+    width: 100%;
+    margin: 5px;
+    z-index: 3;
+    cursor: pointer;
+    border-radius: 10px;
+    overflow: hidden;
+    position: ;
+}
+.branquinhaname{
+    text-align: left;
+    padding: 3px;
+}
+
+#balalapada{
+    height: 20vh;
+    width: 100%;
+}
+
+.bouserpurple{
+    background: #9d36da;
+    padding: 5px;
+    width: 100%;
+}
+
+.lineAdmino{
+    height: 2px;
+    background: #fff;
+    border-radius: 10px;
+    width: 100%;
+    margin: 0 auto 10px;
+    margin-top: 20px;
+}
+.flexUserchat{
+display: flex;
+justify-content: space-around;
+}
+
+.quennUserchat{
+    color: #6e6e6e74;
+}
 
 
