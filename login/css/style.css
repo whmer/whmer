@@ -69,7 +69,7 @@ label{
 
 .btn-log-filer, .btn-log-filer-two{
     font-size: 17px;
-    background: red;
+    background: #9d36da;
     cursor: pointer;
     color: var(--color-white);
     font-family: var(--font);
@@ -596,7 +596,7 @@ transition: 0.5s;
 }
 
 #theplaygamesty{
-    background: #ff0000;
+    background: #9d36da;
     color: #fff;
     font-size: 20px;
     width: 80%;
@@ -701,6 +701,16 @@ justify-content: space-around;
 
 .quennUserchat{
     color: #6e6e6e74;
+}
+
+.leftTexct{
+    text-align: left;
+}
+
+.DwelBui{
+    position: relative;
+    margin-left: 20px;
+    top: 10%;
 }
 
 
