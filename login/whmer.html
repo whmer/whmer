@@ -1359,36 +1359,23 @@ window.addEventListener('scroll', function() {
         </script>
             <br><br><br><br>
         </div>
-        
-        <div class="logocreator">
-            <a href="" id="logoggty">
-                <img src="https://img.icons8.com/?size=100&id=30998&format=png&color=000000" width="30"/>
-            </a>
-            <a href="" id="logoggty">
-                <img src="https://img.icons8.com/?size=100&id=63306&format=png&color=000000" width="30"/>
-            </a>
-            <a href="" id="logoggty">
-                <img src="https://img.icons8.com/?size=100&id=Xy10Jcu1L2Su&format=png&color=000000" width="30"/>
-            </a>
-        </div>
-        <h1>Compartilhar</h1>
-        <button onclick="shareLink()">Compartilhar este link</button>
+        <h1>share</h1>
+        <button onclick="shareLink()" id="theplaygamesty">Share link</button>
     
         <script>
             function shareLink() {
-                // Verifica se a Web Share API é suportada
                 if (navigator.share) {
                     navigator.share({
-                        title: 'Confira este link!',
-                        text: 'Dê uma olhada neste conteúdo:',
-                        url: 'https://open.spotify.com/intl-pt'
+                        title: 'Check out this link!',
+                        text: 'Take a look at this content:',
+                        url: 'https://whmer.onrender.com/'
                     }).then(() => {
-                        console.log('Compartilhamento bem-sucedido');
+                        console.log('Successful sharing');
                     }).catch((error) => {
-                        console.error('Erro ao compartilhar', error);
+                        console.error('Error when sharing', error);
                     });
                 } else {
-                    alert("Seu navegador não suporta compartilhamento nativo.");
+                    alert("Your browser does not support native sharing.");
                 }
             }
         </script>
