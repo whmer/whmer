@@ -997,7 +997,7 @@ window.addEventListener('scroll', function() {
 
             <div class="muuuwelcomer">
             <div class="divfaceusers">
-                <div class="divuser1">
+                <div class="divuser1 telCa">
                     <div class="buttondivuser">
                         <div class="divuserimage">
                             <div class="addUseronline">
@@ -1011,6 +1011,11 @@ window.addEventListener('scroll', function() {
                             <span>Send Message</span>
                         </div>
                     </div>
+                    <script>
+                        document.querySelector('.telCa').addEventListener('click', function(){
+                            window.location.href = 'https://www.cameralivre.com/'
+                        })
+                    </script>
                 </div>
                 <div class="divuser1 talink" id="thekymsamface">
                     <div class="buttondivuser">
@@ -1028,11 +1033,11 @@ window.addEventListener('scroll', function() {
                     </div>
                     <script>
                         document.querySelector('.talink').addEventListener('click', function(){
-                            window.location.href = 'https://www.facebook.com/profile.php?id=61559922673077&mibextid=ZbWKwL'
+                            window.location.href = 'https://www.cameralivre.com/'
                         })
                     </script>
                 </div>
-                <div class="divuser1" id="">
+                <div class="divuser1 gHwep" id="">
                     <div class="buttondivuser">
                         <div class="divuserimage1">
                         </div>
@@ -1043,6 +1048,11 @@ window.addEventListener('scroll', function() {
                             <span>Send Message</span>
                         </div>
                     </div>
+                    <script>
+                        document.querySelector('.gHwep').addEventListener('click', function(){
+                            window.location.href = 'https://www.cameralivre.com/'
+                        })
+                    </script>
                 </div>
                 <script src="./script.js"></script>
                 <style>
@@ -1231,6 +1241,9 @@ window.addEventListener('scroll', function() {
                         </div>
                     </div>
                     </div>
+            <div class="cameRaP">
+                <img src="https://t0v6b0i9.aacdn.net/library/15300/7c011e60f818da6bdeedcd3df2e8c141c00e050b.jpg" width="100%"/>
+            </div>
             <div class="chatyu" id="chatyu">
                 <div class="livechatimage">
                 <img src="https://telegra.ph/file/abb34f328fd5453127ad6.gif" width="22"/>
@@ -1242,6 +1255,7 @@ window.addEventListener('scroll', function() {
                     <span hidden="hidden" style=" background-color: #26ac5e; padding: 5px 20px; font-size: 14px; border-radius: 5px; width: 100%; font-weight: 700;">message</span>
                 </div>
             </div>
+            <br><br><br>
             <script>
                 document.querySelector('.remoki').addEventListener('click', function() {
                    document.querySelector('.divulinkmaymec').style.display = "none";
@@ -1274,10 +1288,10 @@ window.addEventListener('scroll', function() {
                     <br><br>
                     <div class="divdreqxyuser">
                         <div class="divdreIma">
-                            <img src="./dreqxy.jpeg" width="45" style="border-radius: 100%;"/>
+                            <img src="https://i.pinimg.com/564x/14/27/61/1427617b941fd2c2e6eb72a1740e0219.jpg" width="45" style="border-radius: 100%;"/>
                         </div>
                         <div class="nameUser">
-                            <h3 style="color: #9d36da" class="onionAdim">dreqxy onion</h3>
+                            <h3 style="color: #9d36da" class="onionAdim">whmer iana</h3>
                             <p style="font-size: 12px;">Creator && Developer</p>
                         </div>
                     </div>
@@ -1293,10 +1307,10 @@ window.addEventListener('scroll', function() {
                 <br><br><br>
                 <div class="divdreqxyuser">
                     <div class="divdreIma">
-                        <img src="./dreqxy.jpeg" width="45" style="border-radius: 100%;"/>
+                        <img src="https://i.pinimg.com/564x/14/27/61/1427617b941fd2c2e6eb72a1740e0219.jpg" width="45" style="border-radius: 100%;"/>
                     </div>
                     <div class="nameUser">
-                        <h3 style="color: #9d36da" class="onionAdim">dreqxy onion</h3>
+                        <h3 style="color: #9d36da" class="onionAdim">whmer iana</h3>
                         <p style="font-size: 12px;">Creator && Developer</p>
                     </div>
                 </div>
@@ -1312,10 +1326,9 @@ window.addEventListener('scroll', function() {
                 </div>
                 <div class="vidhentairt">
                     <img src="https://telegra.ph/file/5bfd67b5d133efbdfa615.jpg" width="100%" height="210" id="erfdsfsdf"/>
-                </div>
-                <ion-icon name="logo-android"></ion-icon><br>
-                <a style="color: #9d36da; text-decoration: none; font-weight: 600; font-size: 14px;">Can't access the account?</a><br>
-                <p class="pnamespan">Please contact support to be able to access the administrator account. Speak to support via Telegram or WhatsApp.</p>
+                </div><br>
+                <a style="color: #9d36da; text-decoration: none; font-weight: 600; font-size: 34px;">Can't access the account?</a><br>
+                <p class="pnamespan">Please contact support to be able to access the administrator account. Speak to support via <a href="https://api.whatsapp.com/send/?phone=%2B258856482702&text=whmer+iana&type=phone_number&app_absent=0" style="color: #9d36da; text-decoration:none; font-weight: 700;">WhatsApp</a>.</p>
                 <br>
             
             </div>
@@ -1358,6 +1371,27 @@ window.addEventListener('scroll', function() {
                 <img src="https://img.icons8.com/?size=100&id=Xy10Jcu1L2Su&format=png&color=000000" width="30"/>
             </a>
         </div>
+        <h1>Compartilhar</h1>
+        <button onclick="shareLink()">Compartilhar este link</button>
+    
+        <script>
+            function shareLink() {
+                // Verifica se a Web Share API é suportada
+                if (navigator.share) {
+                    navigator.share({
+                        title: 'Confira este link!',
+                        text: 'Dê uma olhada neste conteúdo:',
+                        url: 'https://open.spotify.com/intl-pt'
+                    }).then(() => {
+                        console.log('Compartilhamento bem-sucedido');
+                    }).catch((error) => {
+                        console.error('Erro ao compartilhar', error);
+                    });
+                } else {
+                    alert("Seu navegador não suporta compartilhamento nativo.");
+                }
+            }
+        </script>
 
 
         <br><br><br>
