@@ -6,19 +6,11 @@ let startPosition = 0;
 let currentTranslateX = 0;
 let previousTranslateX = 0;
 let animationFrameId;
-let userIndex = 1; // Começamos no índice 1, pois clonaremos itens
-const itemWidth = window.innerWidth * 0.5; // 50vw em pixels
-
-// Clone o primeiro e o último item para criar o loop
-const firstClone = divUserItems[0].cloneNode(true);
-const lastClone = divUserItems[totalItems - 1].cloneNode(true);
-divFaceUsers.appendChild(firstClone);
-divFaceUsers.insertBefore(lastClone, divUserItems[0]);
-
-const allItems = document.querySelectorAll('.divuser1'); // Atualizamos para incluir os clones
+let userIndex = 0;
+const itemWidth = window.innerWidth * 0.5;
 
 // Adiciona eventos de toque para mobile e mouse para desktop
-allItems.forEach((item) => {
+divUserItems.forEach((item) => {
     item.addEventListener('touchstart', handleTouchStart);
     item.addEventListener('touchmove', handleTouchMove);
     item.addEventListener('touchend', handleTouchEnd);
@@ -48,32 +40,16 @@ function handleTouchEnd() {
 
     const draggedBy = currentTranslateX - previousTranslateX;
 
-    // Arrasta para a próxima ou anterior com base em 50vw
-    if (draggedBy < -itemWidth / 2) {
+    // Verifica se arrastou mais de meio item para a esquerda ou direita
+    if (draggedBy < -itemWidth / 2 && userIndex < totalItems - 1) {
         userIndex++;
     }
-    if (draggedBy > itemWidth / 2) {
+    if (draggedBy > itemWidth / 2 && userIndex > 0) {
         userIndex--;
     }
 
+    divFaceUsers.style.transition = 'transform 0.3s ease-in-out';
     updatePositionByIndex();
-
-    // Verifica se estamos no clone e reposiciona para o loop
-    if (userIndex === 0) {
-        userIndex = totalItems; // Volta ao último item real
-        setTimeout(() => {
-            divFaceUsers.style.transition = 'none';
-            updatePositionByIndex();
-        }, 300);
-    }
-
-    if (userIndex === totalItems + 1) {
-        userIndex = 1; // Volta ao primeiro item real
-        setTimeout(() => {
-            divFaceUsers.style.transition = 'none';
-            updatePositionByIndex();
-        }, 300);
-    }
 }
 
 function getPosition(event) {
@@ -86,7 +62,7 @@ function updateAnimation() {
 }
 
 function updateSliderPosition() {
-    allItems.forEach((item) => {
+    divUserItems.forEach((item) => {
         item.style.transform = `translateX(${currentTranslateX}px)`;
     });
 }
@@ -94,8 +70,7 @@ function updateSliderPosition() {
 function updatePositionByIndex() {
     currentTranslateX = userIndex * -itemWidth;
     previousTranslateX = currentTranslateX;
-    allItems.forEach((item) => {
+    divUserItems.forEach((item) => {
         item.style.transform = `translateX(${currentTranslateX}px)`;
     });
-    divFaceUsers.style.transition = 'transform 0.3s ease-in-out';
 }

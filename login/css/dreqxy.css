@@ -73,7 +73,16 @@
     }
 }
 .welBcomVem{
-    text-align: left;
+    text-align: center;
     width:90%;
     margin: 0 auto 10px;
+    justify-content: center;
+}
+
+.divdreqxyuser{
+    border-left: 1px solid #666464;
+    border-top: 1px solid #666464;
+    border-right: 1px solid #666464;
+    padding: 10px;
+    max-width: 100%;
 }

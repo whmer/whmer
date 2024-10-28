@@ -229,6 +229,8 @@ input::selection{
 
 .files-name-orige{
     position: relative;
+    overflow: hidden;
+    display: flex;
 }
 
 
@@ -249,14 +251,23 @@ transition: 0.5s;
 }
 
 .anime-name{
-    width: 75%;
+    width: 100%;
     overflow: hidden;
     margin: 0 auto;
 }
 
 .tfones{
-    margin-left: 5px;
-    width:20px;
+    width: 40px;
+    position: relative;
+    left: -10px;
+}
+.tfonesr{
+    text-align: left;
+    justify-content: left;
+    text-align: left;
+    width: 40px;
+    position: relative;
+    right: 30px;
 }
 
 .input-login{
