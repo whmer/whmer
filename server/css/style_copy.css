@@ -533,6 +533,24 @@ h4{
     padding: 10px 40px;
     display: flex;
     justify-content: space-around;
+}.anime-name{
+    width: 100%;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.tfones{
+    width: 40px;
+    position: relative;
+    left: -10px;
+}
+.tfonesr{
+    text-align: left;
+    justify-content: left;
+    text-align: left;
+    width: 40px;
+    position: relative;
+    right: 30px;
 }
 
 
