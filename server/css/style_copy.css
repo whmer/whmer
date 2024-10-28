@@ -234,16 +234,7 @@ opacity: 0.7;
 transition: 0.5s;
 }
 
-.anime-name{
-    width: 75%;
-    overflow: hidden;
-    margin: 0 auto;
-}
 
-.tfones{
-    margin-left: 5px;
-    width:20px;
-}
 
 .input-login{
     width: 100%;
